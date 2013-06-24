@@ -1,0 +1,48 @@
+﻿@import "common";
+
+body
+{
+	.files-wrap
+	{
+		position: relative;
+		height: 600px;
+		width: 800px;
+
+		/**
+		 * 上传者:
+		 * 	左上角 - 叉叉,点击删除文件
+		 * 	右下角 - 数字,显示有多少人正在下载,无人则不显示,超过99则显示99+
+		 * 	TODO: 以何种方式显示其他用户下载进度与速度
+		 * 下载者:
+		 * 	左上角 - 减号,点击停止下载(暂停,待考虑)
+		 * 	中间下部 - 下载进度条,鼠标移上后显示百分比(与速度,待定)
+		 *
+		 * 暂定文件信息只显示图标(只表示文件类型)与文件名,鼠标hover时给出详细信息(但是详细信息略少,只包括文件大小)
+		 */
+
+		.file
+		{
+			float: left;
+			height: 150px;
+			width: 125px;
+			background: url("../img/file.png") no-repeat;
+			background-size: contain;
+		}
+	}
+
+	.wrap
+	{
+		float: left;
+		height: 400px;
+		width: 400px;
+		background: #999;
+	}
+
+	.handle
+	{
+		float: left;
+		height: 100px;
+		width: 100px;
+		background: #000;
+	}
+}

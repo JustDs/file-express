@@ -1,0 +1,3 @@
+body .files-wrap{position:relative;height:600px;width:800px;}body .files-wrap .file{float:left;height:150px;width:125px;background:url("../img/file.png") no-repeat;background-size:contain;}
+body .wrap{float:left;height:400px;width:400px;background:#999;}
+body .handle{float:left;height:100px;width:100px;background:#000;}
