@@ -22,11 +22,11 @@ var SplittableFile = (function () {
 	}
 
 	/**
-	 * 可分割的文件模型
+	 * 文件元信息模型
 	 */
 	function FileMetaInfo(options) {
 
-		// 创建指定长度的十六进制字串
+		// 创建指定长度的随机十六进制字串
 		function RandomHexString(size) {
 			var hexString = '';
 			for (var n = 0; n < size / 8; n++) {
@@ -237,6 +237,9 @@ var SplittableFile = (function () {
 						//delete blobTable[insertIndex + 1].blob;
 						delete blobTable[insertIndex + 1];
 					}
+					
+// TODO: 此处由于chrome没有实现URL.revokeObjectUrl导致无法释放blob占用内存,
+// 这将会会产生极为严重的内存泄漏, 如一个20M的文件被分为10000个片段, 则内存泄漏会达到文件尺寸的5000倍以上
 
 					// 插入连接后的的片段
 					blobTable[newStartIndex] = {
